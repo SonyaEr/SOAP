@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="VoucherService" targetNamespace="http://silentium.ua" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://silentium.ua" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://silentium.ua" schemaLocation="voucherservice_schema3.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="findAllStatusVoucherResponse">
+    <wsdl:part name="parameters" element="tns:findAllStatusVoucherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoucher">
+    <wsdl:part name="parameters" element="tns:deleteVoucher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoucherResponse">
+    <wsdl:part name="parameters" element="tns:addVoucherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteVoucherResponse">
+    <wsdl:part name="parameters" element="tns:deleteVoucherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoucherResponse">
+    <wsdl:part name="parameters" element="tns:updateVoucherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllVouchersResponse">
+    <wsdl:part name="parameters" element="tns:findAllVouchersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateVoucher">
+    <wsdl:part name="parameters" element="tns:updateVoucher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllStatusVoucher">
+    <wsdl:part name="parameters" element="tns:findAllStatusVoucher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllVouchersbyPersonResponse">
+    <wsdl:part name="parameters" element="tns:findAllVouchersbyPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addVoucher">
+    <wsdl:part name="parameters" element="tns:addVoucher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllVouchers">
+    <wsdl:part name="parameters" element="tns:findAllVouchers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoucherResponse">
+    <wsdl:part name="parameters" element="tns:getVoucherResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllVouchersbyPerson">
+    <wsdl:part name="parameters" element="tns:findAllVouchersbyPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVoucher">
+    <wsdl:part name="parameters" element="tns:getVoucher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VoucherWebServiceSEI">
+    <wsdl:operation name="deleteVoucher">
+      <wsdl:input name="deleteVoucher" message="tns:deleteVoucher">
+    </wsdl:input>
+      <wsdl:output name="deleteVoucherResponse" message="tns:deleteVoucherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoucher">
+      <wsdl:input name="updateVoucher" message="tns:updateVoucher">
+    </wsdl:input>
+      <wsdl:output name="updateVoucherResponse" message="tns:updateVoucherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoucher">
+      <wsdl:input name="addVoucher" message="tns:addVoucher">
+    </wsdl:input>
+      <wsdl:output name="addVoucherResponse" message="tns:addVoucherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllVouchers">
+      <wsdl:input name="findAllVouchers" message="tns:findAllVouchers">
+    </wsdl:input>
+      <wsdl:output name="findAllVouchersResponse" message="tns:findAllVouchersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllStatusVoucher">
+      <wsdl:input name="findAllStatusVoucher" message="tns:findAllStatusVoucher">
+    </wsdl:input>
+      <wsdl:output name="findAllStatusVoucherResponse" message="tns:findAllStatusVoucherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllVouchersbyPerson">
+      <wsdl:input name="findAllVouchersbyPerson" message="tns:findAllVouchersbyPerson">
+    </wsdl:input>
+      <wsdl:output name="findAllVouchersbyPersonResponse" message="tns:findAllVouchersbyPersonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoucher">
+      <wsdl:input name="getVoucher" message="tns:getVoucher">
+    </wsdl:input>
+      <wsdl:output name="getVoucherResponse" message="tns:getVoucherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VoucherServiceSoapBinding" type="tns:VoucherWebServiceSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="deleteVoucher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteVoucher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteVoucherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateVoucher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateVoucher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateVoucherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addVoucher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addVoucher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addVoucherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllVouchers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllVouchers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllVouchersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllStatusVoucher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllStatusVoucher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllStatusVoucherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllVouchersbyPerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllVouchersbyPerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllVouchersbyPersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVoucher">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVoucher">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVoucherResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VoucherService">
+    <wsdl:port name="VoucherServicePort" binding="tns:VoucherServiceSoapBinding">
+      <soap:address location="http://localhost:9090/VoucherServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

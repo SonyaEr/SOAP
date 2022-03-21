@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TourService" targetNamespace="http://silentium.ua" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://silentium.ua" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://silentium.ua" schemaLocation="tourservice_schema3.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="findAllTypeFoodResponse">
+    <wsdl:part name="parameters" element="tns:findAllTypeFoodResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTour">
+    <wsdl:part name="parameters" element="tns:addTour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllToursResponse">
+    <wsdl:part name="parameters" element="tns:findAllToursResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findToursByName">
+    <wsdl:part name="parameters" element="tns:findToursByName">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTours">
+    <wsdl:part name="parameters" element="tns:findAllTours">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTourDatesResponse">
+    <wsdl:part name="parameters" element="tns:findAllTourDatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTourResponse">
+    <wsdl:part name="parameters" element="tns:getTourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTourResponse">
+    <wsdl:part name="parameters" element="tns:deleteTourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTourDatesByTourIdResponse">
+    <wsdl:part name="parameters" element="tns:getTourDatesByTourIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTypeTransportResponse">
+    <wsdl:part name="parameters" element="tns:findAllTypeTransportResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTour">
+    <wsdl:part name="parameters" element="tns:updateTour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTypeTransport">
+    <wsdl:part name="parameters" element="tns:findAllTypeTransport">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TourServiceImplResponse">
+    <wsdl:part name="parameters" element="tns:TourServiceImplResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TourServiceImpl">
+    <wsdl:part name="parameters" element="tns:TourServiceImpl">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTourDateResponse">
+    <wsdl:part name="parameters" element="tns:addTourDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTypeFood">
+    <wsdl:part name="parameters" element="tns:findAllTypeFood">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTourDateResponse">
+    <wsdl:part name="parameters" element="tns:deleteTourDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTour">
+    <wsdl:part name="parameters" element="tns:getTour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTourDate">
+    <wsdl:part name="parameters" element="tns:updateTourDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTour">
+    <wsdl:part name="parameters" element="tns:deleteTour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTourDate">
+    <wsdl:part name="parameters" element="tns:addTourDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTypeTour">
+    <wsdl:part name="parameters" element="tns:findAllTypeTour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTourDatesByTourId">
+    <wsdl:part name="parameters" element="tns:getTourDatesByTourId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteTourDate">
+    <wsdl:part name="parameters" element="tns:deleteTourDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTypeTourResponse">
+    <wsdl:part name="parameters" element="tns:findAllTypeTourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTourResponse">
+    <wsdl:part name="parameters" element="tns:addTourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTourResponse">
+    <wsdl:part name="parameters" element="tns:updateTourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findToursByNameResponse">
+    <wsdl:part name="parameters" element="tns:findToursByNameResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTourDateResponse">
+    <wsdl:part name="parameters" element="tns:updateTourDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllTourDates">
+    <wsdl:part name="parameters" element="tns:findAllTourDates">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TourWebServiceSEI">
+    <wsdl:operation name="addTour">
+      <wsdl:input name="addTour" message="tns:addTour">
+    </wsdl:input>
+      <wsdl:output name="addTourResponse" message="tns:addTourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTourDate">
+      <wsdl:input name="addTourDate" message="tns:addTourDate">
+    </wsdl:input>
+      <wsdl:output name="addTourDateResponse" message="tns:addTourDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeTour">
+      <wsdl:input name="findAllTypeTour" message="tns:findAllTypeTour">
+    </wsdl:input>
+      <wsdl:output name="findAllTypeTourResponse" message="tns:findAllTypeTourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTourDatesByTourId">
+      <wsdl:input name="getTourDatesByTourId" message="tns:getTourDatesByTourId">
+    </wsdl:input>
+      <wsdl:output name="getTourDatesByTourIdResponse" message="tns:getTourDatesByTourIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTourDate">
+      <wsdl:input name="deleteTourDate" message="tns:deleteTourDate">
+    </wsdl:input>
+      <wsdl:output name="deleteTourDateResponse" message="tns:deleteTourDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findToursByName">
+      <wsdl:input name="findToursByName" message="tns:findToursByName">
+    </wsdl:input>
+      <wsdl:output name="findToursByNameResponse" message="tns:findToursByNameResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTours">
+      <wsdl:input name="findAllTours" message="tns:findAllTours">
+    </wsdl:input>
+      <wsdl:output name="findAllToursResponse" message="tns:findAllToursResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTour">
+      <wsdl:input name="updateTour" message="tns:updateTour">
+    </wsdl:input>
+      <wsdl:output name="updateTourResponse" message="tns:updateTourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeTransport">
+      <wsdl:input name="findAllTypeTransport" message="tns:findAllTypeTransport">
+    </wsdl:input>
+      <wsdl:output name="findAllTypeTransportResponse" message="tns:findAllTypeTransportResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourServiceImpl">
+      <wsdl:input name="TourServiceImpl" message="tns:TourServiceImpl">
+    </wsdl:input>
+      <wsdl:output name="TourServiceImplResponse" message="tns:TourServiceImplResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeFood">
+      <wsdl:input name="findAllTypeFood" message="tns:findAllTypeFood">
+    </wsdl:input>
+      <wsdl:output name="findAllTypeFoodResponse" message="tns:findAllTypeFoodResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTourDates">
+      <wsdl:input name="findAllTourDates" message="tns:findAllTourDates">
+    </wsdl:input>
+      <wsdl:output name="findAllTourDatesResponse" message="tns:findAllTourDatesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTour">
+      <wsdl:input name="getTour" message="tns:getTour">
+    </wsdl:input>
+      <wsdl:output name="getTourResponse" message="tns:getTourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTourDate">
+      <wsdl:input name="updateTourDate" message="tns:updateTourDate">
+    </wsdl:input>
+      <wsdl:output name="updateTourDateResponse" message="tns:updateTourDateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTour">
+      <wsdl:input name="deleteTour" message="tns:deleteTour">
+    </wsdl:input>
+      <wsdl:output name="deleteTourResponse" message="tns:deleteTourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TourServiceSoapBinding" type="tns:TourWebServiceSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addTour">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addTour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addTourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTourDate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addTourDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addTourDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeTour">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllTypeTour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllTypeTourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTourDatesByTourId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTourDatesByTourId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTourDatesByTourIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTourDate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteTourDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteTourDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findToursByName">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findToursByName">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findToursByNameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTours">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllTours">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllToursResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTour">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateTour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateTourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeTransport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllTypeTransport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllTypeTransportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TourServiceImpl">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="TourServiceImpl">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="TourServiceImplResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTypeFood">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllTypeFood">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllTypeFoodResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllTourDates">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllTourDates">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllTourDatesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTour">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTourDate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateTourDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateTourDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTour">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteTour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteTourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TourService">
+    <wsdl:port name="TourServicePort" binding="tns:TourServiceSoapBinding">
+      <soap:address location="http://localhost:9090/TourServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

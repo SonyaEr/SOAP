@@ -1,0 +1,90 @@
+<xs:schema xmlns:ns1="http://silentium.ua/entity/vouchers" xmlns:tns="http://silentium.ua" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://silentium.ua" version="1.0">
+
+  <xs:import namespace="http://silentium.ua/entity/vouchers" schemaLocation="personservice_schema1.xsd"/>
+
+  <xs:element name="addPerson" type="tns:addPerson"/>
+
+  <xs:element name="addPersonResponse" type="tns:addPersonResponse"/>
+
+  <xs:element name="checkPerson" type="tns:checkPerson"/>
+
+  <xs:element name="checkPersonResponse" type="tns:checkPersonResponse"/>
+
+  <xs:element name="deletePerson" type="tns:deletePerson"/>
+
+  <xs:element name="deletePersonResponse" type="tns:deletePersonResponse"/>
+
+  <xs:element name="getPerson" type="tns:getPerson"/>
+
+  <xs:element name="getPersonResponse" type="tns:getPersonResponse"/>
+
+  <xs:element name="updatePerson" type="tns:updatePerson"/>
+
+  <xs:element name="updatePersonResponse" type="tns:updatePersonResponse"/>
+
+  <xs:complexType name="checkPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkPersonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:Person"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="deletePerson">
+    <xs:sequence>
+      <xs:element name="idPerson" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deletePersonResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPerson">
+    <xs:sequence>
+      <xs:element name="idPerson" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPersonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:Person"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="person" type="ns1:Person"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addPersonResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updatePerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="person" type="ns1:Person"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updatePersonResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

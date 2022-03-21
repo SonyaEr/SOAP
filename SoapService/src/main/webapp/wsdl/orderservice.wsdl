@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="OrderService" targetNamespace="http://silentium.ua" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://silentium.ua" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://silentium.ua" schemaLocation="orderservice_schema3.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="findAllOrdersbyPerson">
+    <wsdl:part name="parameters" element="tns:findAllOrdersbyPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllOrdersResponse">
+    <wsdl:part name="parameters" element="tns:findAllOrdersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteOrderResponse">
+    <wsdl:part name="parameters" element="tns:deleteOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllOrders">
+    <wsdl:part name="parameters" element="tns:findAllOrders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllStatusOrder">
+    <wsdl:part name="parameters" element="tns:findAllStatusOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllStatusOrderResponse">
+    <wsdl:part name="parameters" element="tns:findAllStatusOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderResponse">
+    <wsdl:part name="parameters" element="tns:updateOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllOrdersbyPersonResponse">
+    <wsdl:part name="parameters" element="tns:findAllOrdersbyPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrder">
+    <wsdl:part name="parameters" element="tns:updateOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrder">
+    <wsdl:part name="parameters" element="tns:addOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addOrderResponse">
+    <wsdl:part name="parameters" element="tns:addOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteOrder">
+    <wsdl:part name="parameters" element="tns:deleteOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderWebServiceSEI">
+    <wsdl:operation name="findAllOrdersbyPerson">
+      <wsdl:input name="findAllOrdersbyPerson" message="tns:findAllOrdersbyPerson">
+    </wsdl:input>
+      <wsdl:output name="findAllOrdersbyPersonResponse" message="tns:findAllOrdersbyPersonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllOrders">
+      <wsdl:input name="findAllOrders" message="tns:findAllOrders">
+    </wsdl:input>
+      <wsdl:output name="findAllOrdersResponse" message="tns:findAllOrdersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllStatusOrder">
+      <wsdl:input name="findAllStatusOrder" message="tns:findAllStatusOrder">
+    </wsdl:input>
+      <wsdl:output name="findAllStatusOrderResponse" message="tns:findAllStatusOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input name="updateOrder" message="tns:updateOrder">
+    </wsdl:input>
+      <wsdl:output name="updateOrderResponse" message="tns:updateOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <wsdl:input name="addOrder" message="tns:addOrder">
+    </wsdl:input>
+      <wsdl:output name="addOrderResponse" message="tns:addOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <wsdl:input name="deleteOrder" message="tns:deleteOrder">
+    </wsdl:input>
+      <wsdl:output name="deleteOrderResponse" message="tns:deleteOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderServiceSoapBinding" type="tns:OrderWebServiceSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findAllOrdersbyPerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllOrdersbyPerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllOrdersbyPersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllOrders">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAllStatusOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAllStatusOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllStatusOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderService">
+    <wsdl:port name="OrderServicePort" binding="tns:OrderServiceSoapBinding">
+      <soap:address location="http://localhost:9090/OrderServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

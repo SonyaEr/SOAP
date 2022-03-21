@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxws:endpoint xmlns:tns="http://silentium.ua"
+		id="personservice"
+		implementor="ua.silentium.entity.service.PersonService"
+		wsdlLocation="wsdl/personservice.wsdl"
+		endpointName="tns:PersonServicePort" serviceName="tns:PersonService"
+		address="/PersonServicePort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint xmlns:tns="http://silentium.ua"
+		id="voucherservice"
+		implementor="ua.silentium.entity.service.VoucherService"
+		wsdlLocation="wsdl/voucherservice.wsdl"
+		endpointName="tns:VoucherServicePort" serviceName="tns:VoucherService"
+		address="/VoucherServicePort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint xmlns:tns="http://silentium.ua"
+		id="orderservice"
+		implementor="ua.silentium.entity.service.OrderService"
+		wsdlLocation="wsdl/orderservice.wsdl"
+		endpointName="tns:OrderServicePort" serviceName="tns:OrderService"
+		address="/OrderServicePort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+
+	<jaxws:endpoint xmlns:tns="http://silentium.ua"
+		id="tourservice" implementor="ua.silentium.entity.service.TourService"
+		wsdlLocation="wsdl/tourservice.wsdl"
+		endpointName="tns:TourServicePort" serviceName="tns:TourService"
+		address="/TourServicePort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+</beans>

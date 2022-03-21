@@ -1,0 +1,237 @@
+<xs:schema xmlns:ns1="http://silentium.ua/entity/vouchers" xmlns:tns="http://silentium.ua" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://silentium.ua" version="1.0">
+
+  <xs:import namespace="http://silentium.ua/entity/vouchers" schemaLocation="tourservice_schema1.xsd"/>
+
+  <xs:element name="TourServiceImpl" type="tns:TourServiceImpl"/>
+
+  <xs:element name="TourServiceImplResponse" type="tns:TourServiceImplResponse"/>
+
+  <xs:element name="addTour" type="tns:addTour"/>
+
+  <xs:element name="addTourDate" type="tns:addTourDate"/>
+
+  <xs:element name="addTourDateResponse" type="tns:addTourDateResponse"/>
+
+  <xs:element name="addTourResponse" type="tns:addTourResponse"/>
+
+  <xs:element name="deleteTour" type="tns:deleteTour"/>
+
+  <xs:element name="deleteTourDate" type="tns:deleteTourDate"/>
+
+  <xs:element name="deleteTourDateResponse" type="tns:deleteTourDateResponse"/>
+
+  <xs:element name="deleteTourResponse" type="tns:deleteTourResponse"/>
+
+  <xs:element name="findAllTourDates" type="tns:findAllTourDates"/>
+
+  <xs:element name="findAllTourDatesResponse" type="tns:findAllTourDatesResponse"/>
+
+  <xs:element name="findAllTours" type="tns:findAllTours"/>
+
+  <xs:element name="findAllToursResponse" type="tns:findAllToursResponse"/>
+
+  <xs:element name="findAllTypeFood" type="tns:findAllTypeFood"/>
+
+  <xs:element name="findAllTypeFoodResponse" type="tns:findAllTypeFoodResponse"/>
+
+  <xs:element name="findAllTypeTour" type="tns:findAllTypeTour"/>
+
+  <xs:element name="findAllTypeTourResponse" type="tns:findAllTypeTourResponse"/>
+
+  <xs:element name="findAllTypeTransport" type="tns:findAllTypeTransport"/>
+
+  <xs:element name="findAllTypeTransportResponse" type="tns:findAllTypeTransportResponse"/>
+
+  <xs:element name="findToursByName" type="tns:findToursByName"/>
+
+  <xs:element name="findToursByNameResponse" type="tns:findToursByNameResponse"/>
+
+  <xs:element name="getTour" type="tns:getTour"/>
+
+  <xs:element name="getTourDatesByTourId" type="tns:getTourDatesByTourId"/>
+
+  <xs:element name="getTourDatesByTourIdResponse" type="tns:getTourDatesByTourIdResponse"/>
+
+  <xs:element name="getTourResponse" type="tns:getTourResponse"/>
+
+  <xs:element name="updateTour" type="tns:updateTour"/>
+
+  <xs:element name="updateTourDate" type="tns:updateTourDate"/>
+
+  <xs:element name="updateTourDateResponse" type="tns:updateTourDateResponse"/>
+
+  <xs:element name="updateTourResponse" type="tns:updateTourResponse"/>
+
+  <xs:complexType name="addTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tour" type="ns1:Tour"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="addTourResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addTourDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tourdate" type="ns1:Tour_date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addTourDateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeTour">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeTourResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTourDatesByTourId">
+    <xs:sequence>
+      <xs:element name="idTour" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTourDatesByTourIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Tour_date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTourDate">
+    <xs:sequence>
+      <xs:element name="idTourDate" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTourDateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findToursByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tourName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findToursByNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Tour"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTours">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllToursResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Tour"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tour" type="ns1:Tour"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTourResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeTransport">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeTransportResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TourServiceImpl">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="TourServiceImplResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeFood">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTypeFoodResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTourDates">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTourDatesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Tour_date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTour">
+    <xs:sequence>
+      <xs:element name="idTour" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTourResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:Tour"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTourDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tourdate" type="ns1:Tour_date"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTourDateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTour">
+    <xs:sequence>
+      <xs:element name="idTour" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTourResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

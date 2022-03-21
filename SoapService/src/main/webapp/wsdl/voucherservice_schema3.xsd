@@ -1,0 +1,117 @@
+<xs:schema xmlns:ns1="http://silentium.ua/entity/vouchers" xmlns:tns="http://silentium.ua" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://silentium.ua" version="1.0">
+
+  <xs:import namespace="http://silentium.ua/entity/vouchers" schemaLocation="voucherservice_schema1.xsd"/>
+
+  <xs:element name="addVoucher" type="tns:addVoucher"/>
+
+  <xs:element name="addVoucherResponse" type="tns:addVoucherResponse"/>
+
+  <xs:element name="deleteVoucher" type="tns:deleteVoucher"/>
+
+  <xs:element name="deleteVoucherResponse" type="tns:deleteVoucherResponse"/>
+
+  <xs:element name="findAllStatusVoucher" type="tns:findAllStatusVoucher"/>
+
+  <xs:element name="findAllStatusVoucherResponse" type="tns:findAllStatusVoucherResponse"/>
+
+  <xs:element name="findAllVouchers" type="tns:findAllVouchers"/>
+
+  <xs:element name="findAllVouchersResponse" type="tns:findAllVouchersResponse"/>
+
+  <xs:element name="findAllVouchersbyPerson" type="tns:findAllVouchersbyPerson"/>
+
+  <xs:element name="findAllVouchersbyPersonResponse" type="tns:findAllVouchersbyPersonResponse"/>
+
+  <xs:element name="getVoucher" type="tns:getVoucher"/>
+
+  <xs:element name="getVoucherResponse" type="tns:getVoucherResponse"/>
+
+  <xs:element name="updateVoucher" type="tns:updateVoucher"/>
+
+  <xs:element name="updateVoucherResponse" type="tns:updateVoucherResponse"/>
+
+  <xs:complexType name="deleteVoucher">
+    <xs:sequence>
+      <xs:element name="idVoucher" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteVoucherResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateVoucher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="voucher" type="ns1:Voucher"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="updateVoucherResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addVoucher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="voucher" type="ns1:Voucher"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addVoucherResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllVouchers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllVouchersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Voucher"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllStatusVoucher">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllStatusVoucherResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllVouchersbyPerson">
+    <xs:sequence>
+      <xs:element name="idPerson" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllVouchersbyPersonResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Voucher"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVoucher">
+    <xs:sequence>
+      <xs:element name="idVoucher" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVoucherResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:Voucher"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

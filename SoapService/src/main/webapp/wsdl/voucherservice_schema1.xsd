@@ -1,0 +1,154 @@
+<xs:schema xmlns:ns1="http://silentium.ua" xmlns:ns2="http://silentium.ua/entity" xmlns:tns="http://silentium.ua/entity/vouchers" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://silentium.ua/entity/vouchers" version="1.0">
+
+  <xs:import namespace="http://silentium.ua" schemaLocation="voucherservice_schema3.xsd"/>
+
+  <xs:import namespace="http://silentium.ua/entity" schemaLocation="voucherservice_schema2.xsd"/>
+
+  <xs:element name="VoucherList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Voucher" type="tns:Voucher"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Voucher">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="voucher_count" type="xs:int"/>
+          <xs:element name="amount" type="xs:decimal"/>
+          <xs:element name="Person" type="tns:Person"/>
+          <xs:element name="Order" type="tns:Order"/>
+          <xs:element name="voucher_date" type="xs:dateTime"/>
+          <xs:element name="date_updated_voucher" type="xs:dateTime"/>
+          <xs:element name="StatusVoucher" type="tns:StatusVoucher"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Person">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="surname" type="xs:string"/>
+          <xs:element minOccurs="0" name="patronymic" type="xs:string"/>
+          <xs:element name="email" type="xs:string"/>
+          <xs:element name="password" type="xs:string"/>
+          <xs:element minOccurs="0" name="tel_num" type="xs:string"/>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="birth_date" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+          <xs:element name="Role" type="tns:Role"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Role">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="role_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Order">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="order_count" type="xs:int"/>
+          <xs:element name="TourDate" type="tns:Tour_date"/>
+          <xs:element name="Person" type="tns:Person"/>
+          <xs:element name="order_date" type="xs:dateTime"/>
+          <xs:element name="date_updated_order" type="xs:dateTime"/>
+          <xs:element name="StatusOrder" type="tns:StatusOrder"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Tour_date">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="date_arrival" type="xs:dateTime"/>
+          <xs:element name="price" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="tour_date_name" type="xs:string"/>
+          <xs:element name="Tour" type="tns:Tour"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Tour">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="tour_name" type="xs:string"/>
+          <xs:element name="tour_description" type="xs:string"/>
+          <xs:element name="quantity_night" type="xs:int"/>
+          <xs:element name="tour_operator" type="xs:string"/>
+          <xs:element name="Type_food" type="tns:TypeFood"/>
+          <xs:element name="Type_transport" type="tns:Type_transport"/>
+          <xs:element name="Type_tour" type="tns:Type_tour"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TypeFood">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="type_food_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Type_transport">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="type_transport_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Type_tour">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="type_tour_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StatusOrder">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="status_order_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StatusVoucher">
+    <xs:complexContent>
+      <xs:extension base="ns2:Entity">
+        <xs:sequence>
+          <xs:element name="status_voucher_name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

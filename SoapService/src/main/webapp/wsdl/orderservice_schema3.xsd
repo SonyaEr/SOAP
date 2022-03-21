@@ -1,0 +1,101 @@
+<xs:schema xmlns:ns1="http://silentium.ua/entity/vouchers" xmlns:tns="http://silentium.ua" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://silentium.ua" version="1.0">
+
+  <xs:import namespace="http://silentium.ua/entity/vouchers" schemaLocation="orderservice_schema1.xsd"/>
+
+  <xs:element name="addOrder" type="tns:addOrder"/>
+
+  <xs:element name="addOrderResponse" type="tns:addOrderResponse"/>
+
+  <xs:element name="deleteOrder" type="tns:deleteOrder"/>
+
+  <xs:element name="deleteOrderResponse" type="tns:deleteOrderResponse"/>
+
+  <xs:element name="findAllOrders" type="tns:findAllOrders"/>
+
+  <xs:element name="findAllOrdersResponse" type="tns:findAllOrdersResponse"/>
+
+  <xs:element name="findAllOrdersbyPerson" type="tns:findAllOrdersbyPerson"/>
+
+  <xs:element name="findAllOrdersbyPersonResponse" type="tns:findAllOrdersbyPersonResponse"/>
+
+  <xs:element name="findAllStatusOrder" type="tns:findAllStatusOrder"/>
+
+  <xs:element name="findAllStatusOrderResponse" type="tns:findAllStatusOrderResponse"/>
+
+  <xs:element name="updateOrder" type="tns:updateOrder"/>
+
+  <xs:element name="updateOrderResponse" type="tns:updateOrderResponse"/>
+
+  <xs:complexType name="findAllOrdersbyPerson">
+    <xs:sequence>
+      <xs:element name="idPerson" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllOrdersbyPersonResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Order"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllOrders">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllOrdersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:Order"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllStatusOrder">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllStatusOrderResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="order" type="ns1:Order"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateOrderResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="order" type="ns1:Order"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addOrderResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteOrder">
+    <xs:sequence>
+      <xs:element name="idOrder" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteOrderResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
